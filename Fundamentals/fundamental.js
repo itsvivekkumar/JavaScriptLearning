@@ -28,7 +28,45 @@ console.log(detail);
 const detail1=`Hi I'am ${fname} ${lname} works as ${job} and I am ${babluAge} old`;
 console.log(detail1);
 
+//if-else
+const age=10;
+if(age>=18){
+    console.log("U are elgilble to vote");
+}
+else{
+    console.log("Not eligiable to vote...");
+}
+
+//type conversion
+const a="10";
+console.log(a+5);   //105,concatenation will happen automatic
+console.log(Number(a)+5);    
+
+const b=23;       
+console.log(b+5);    
+console.log(String(b)+5);   //here concatenation will happen 
 
 
+//type coercion
+console.log('11'+5+1+'0');   //11510=here + sign act as coersion converts integer into string and then calculate
+console.log('11'-5-1 );     //5=here - sign act as coersion converts string into integer and then calculate
+
+console.log('11'-5+'1' );  //61=fist - sign subtract and then + sign concatinate them . 6+1=61
+console.log('11'+5+1-'9');   //1142=fisrt use + sign for concatination and then using - sign subtract both number .1151-9=1142
+
+//falsy values in JS are 0,undefied,NaN,false,null string.
+const c=0 ,e='Hi',f='';
+
+console.log(Boolean(0));  //false
+ 
+console.log(Boolean(e));  //true
+console.log(Boolean(f));   //false
+if(c){
+    console.log("value not should be 0 ,try entering some value ");
+}
+else{
+    console.log("value is 0");
+} 
 
 
+//equality operator like strict (===)  and loose(==)
