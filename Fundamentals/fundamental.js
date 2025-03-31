@@ -70,6 +70,54 @@
 
 
 //equality operator like strict (===)  and loose(==)
-const n=23,n1=23;
-console.logz(n===n1);
-console.logz(n==n1);
+const n='23',n1=23;
+console.log(n===n1);
+console.log(n==n1);
+
+//switch case
+const eid='tuesday';
+switch(eid){
+    case 'monday':
+        console.log("its monday");
+        break;
+    case 'tuesday':
+        console.log("its tuesday");
+             
+    case 'wednesday':
+         console.log("its wednesday");
+            break;  
+    default:
+        console.log("please enter valid day name ......") 
+        break;
+    
+}
+
+//logical opperator =&&, ||,!=
+const isLicense =false;
+const is18Plus=true;
+if(isLicense && is18Plus){
+    console.log("u can drive easily");
+} else{
+    console.log("you cannot drive,fill required detail for driving");
+}
+
+
+//functions declaration-here funct name must be provided and we can also call funct before intialization.
+console.log(add(5,6));
+function add(a,b){
+    return a+b;
+}
+console.log(add(5,9));
+
+//funct as expression-here funcion define as expression and store inside variable and also we can't declare before initilization.
+
+const multiply=function(c,d){
+    return c*d;
+}
+console.log(multiply(5,5));
+
+
+//arrow funct-
+
+
+
