@@ -118,6 +118,39 @@ console.log(multiply(5,5));
 
 
 //arrow funct-
+const calYear=birthYear=> 2025-birthYear;
+console.log(calYear(2002));
+
+const division=(x,y)=>{
+    const ans=(x>y) ? x/y : y/x;
+    return ans;
+}
+console.log(division(10,20));
+
+//array
+const arr=['vivek','surya','bablu','kumar'];
+console.log(arr[1],arr.length);
+
+const arr1=new Array(1,2,3,4,5);
+console.log(arr1[3],arr1.length);
+ const arr2=['Hi','miss',55,arr1];
+ console.log(arr2,'the size of arr2 is =',arr2.length);
+
+
+ //Object in JS
+ const employeeDetail={
+    'fname' :'Virat',
+    lanme :'kohli',
+    age :20,
+    arr3 :['Hello','madam',16]
+    
+ }
+ console.log(employeeDetail);
+ console.log(employeeDetail.lanme);
+ console.log(employeeDetail.fname);
+
+
+
 
 
 
