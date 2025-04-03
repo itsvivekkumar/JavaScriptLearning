@@ -149,8 +149,72 @@ console.log(arr1[3],arr1.length);
  console.log(employeeDetail.lanme);
  console.log(employeeDetail.fname);
 
+ //for loop
+ const arr3=new Array(1,2,3,4,5);
+ for(let i=0; i<arr3.length; i++){
+    console.log(arr3[i]);
+ }
+ //for each loop
+ arr3.forEach((item) =>{
+    console.log(item+10);
+ })
 
 
+ //practicing more arrow funtiions 
+ const villageDetail={
+    name :'Tilouthu',
+    post :'dehri',
+    station :'sasaram',
+    code :123456,
+    distric :'rohtas',
+    state :'bihar'
 
+ }
+ const findDetils=(details)=>{
+    console.log(details);
+ }
+ findDetils(villageDetail);
+
+
+//Arrow functions don’t bind this, so using this.name inside an arrow function will not work as expected
+ const person = {
+    name: "John",
+    age: 25,
+    greet: () => console.log(`Hello, my name is ${person.name}`) 
+};
+
+person.greet();
+
+//Arrow functions don’t have their own this, so use regular functions for methods.
+const user = {
+    name: "Alice",
+    age: 30,
+    greet() {
+        console.log(`Hi, I am ${this.name}`);               // Correct usage of `this`
+    }
+};
+
+user.greet();
+
+// Arrow Functions Inside Methods=>Arrow functions inherit this from their surrounding scope, making them great for forEach().
+const student = {
+    name: "David",
+    subjects: ["Math", "Science", "History"],
+    listSubjects() {
+        this.subjects.forEach(subject => console.log(`${this.name} studies ${subject}`));
+    }
+};
+
+student.listSubjects();
+
+//Returning an Object from an Arrow Function by Using ().
+const createUser = (name, age) => ({
+    name: name,
+    age: age,
+    isAdult: age >= 18
+});
+
+console.log(createUser("Emma", 22));
+ 
 
 
