@@ -215,6 +215,106 @@ const createUser = (name, age) => ({
 });
 
 console.log(createUser("Emma", 22));
+
+
+//Example 1= Create an object that manages a team of members
+const teamManager = {
+    teamName: "Code Ninjas",
+    members: [],
+
+    addMember(name, role) {
+        this.members.push({ name, role });
+    },
+
+    removeMember: name => {
+        //Problem: `this` won’t work here that's why regular function.
+         
+        teamManager.members = teamManager.members.filter(member => member.name !== name);
+    },
+
+    listMembers() {
+        this.members.forEach(member =>
+            console.log(`${member.name} is a ${member.role} in ${this.teamName}`)
+        );
+    }
+};
+
+teamManager.addMember("Alice", "Frontend Dev");
+teamManager.addMember("Bob", "Backend Dev");
+teamManager.listMembers();
+teamManager.removeMember("Bob");
+teamManager.listMembers();
+
+
+
+//Example 2= Scoreboard with Auto update.
+const game = {
+    players: [
+        { name: "Player 1", score: 0 },
+        { name: "Player 2", score: 0 },
+    ],
+
+    startGame() {
+        setInterval(() => {
+            this.players.forEach(player => {
+                player.score += Math.floor(Math.random() * 10);
+            });
+            console.log(this.players);
+        }, 2000);
+    }
+};
+
+// game.startGame();
+
+
+
+
+//Example 3=Filter a list of user objects based on a dynamic key and value using an arrow function.
+const userList = {
+    users: [
+        { name: "Alice", role: "admin" },
+        { name: "Bob", role: "user" },
+        { name: "Eve", role: "user" },
+        { name: "Charlie", role: "admin" }
+    ],
+
+    filterUsers: (key, value) => userList.users.filter(user => user[key] === value)
+};
+
+console.log(userList.filterUsers("role", "admin"));   //return jo user ka key=role and value=admin .
+
+
+
+//Example 4=Make an object where you can chain calls.
+const calculator = {
+    value: 0,
+
+    add: function (num) {
+        this.value += num;
+        return this;
+    },
+
+    subtract: function (num) {
+        this.value -= num;
+        return this;
+    },
+
+    multiply: num => {
+        //arrow function `this` wil not work
+      
+        calculator.value *= num;
+        return calculator;
+    },
+
+    result() {
+        console.log("Result:", this.value);
+        return this;
+    }
+};
+
+calculator.add(10).subtract(3).multiply(2).result();   //  output=(0+10)=(10-3)=(7*2)= 14
+
+
  
 
 
