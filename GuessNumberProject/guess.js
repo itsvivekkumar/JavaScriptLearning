@@ -3,7 +3,7 @@ let score=20, highscore=0;
 
 document.querySelector('body').style.backgroundColor ='#344';
 document.querySelector('.number').style.width = '15rem';
-let randomNumber=Math.trunc(Math.random()*20+1);
+let randomNumber=Math.trunc(Math.random()*20)+1;
 
 document.querySelector('.number').textContent=randomNumber;
 console.log(document.querySelector('.message').textContent);
