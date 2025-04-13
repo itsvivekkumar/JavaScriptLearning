@@ -47,3 +47,36 @@ console.log(vivek.details());   //print content inside details. And if vivek.det
 console.log(vivek.maturity());   //The content inside maturity can't access using this keyword as Arrow funct does not owns it.
 
 
+//Memory management by Garbage collector .
+//For primitives data types like null,undefined,BigInt ,symbol etc managed inside stack 
+//For objects,array,functions are managed inside Heap 
+
+const Bablu ={
+     Fname: "bablu",
+     age:39,
+     married:{
+        getMessage : `Hi I am`
+     }
+}
+
+// const betterBablu=Bablu;   //we are copying object so while upadating new object make changes in original object too.
+// betterBablu.age=50;
+// console.log(Bablu);
+// console.log(betterBablu);
+
+
+//Now using spread operator we can update primitives datatypes called shallow copy.
+// const betterBablu={...Bablu};
+// betterBablu.age=50;
+// betterBablu.married=`Hi I am ${this.Fname} `;
+// console.log(Bablu);
+// console.log(betterBablu);
+
+
+//Now using StructuredClone function that makes object ,funciton update/changes.
+const betterBablu=structuredClone(Bablu);
+betterBablu.age=90;
+// betterBablu.married.getMessage=`Hi I am ${betterBablu.Fname}`;  //can't execute bcuz structureclone limitation.we can update object,primitives but can't function.
+
+console.log(Bablu);
+console.log(betterBablu);
